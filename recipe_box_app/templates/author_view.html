@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Box | {{author.name}}'s profile</title>
+</head>
+<body>
+    <h1>Author View</h1>
+    <br>
+    {{ author.name }}
+    <br>
+    {{ author.bio }}
+    <br>
+    <ul>
+        {% for item in recipes %}
+        <li>
+            <span><a href="/recipe/{{item.id}}/">{{ item.title }}</a></span>
+        </li>
+        {% endfor %}
+    </ul>
+        <span>go <a href="/">home</a></span>
+</body>
+</html>

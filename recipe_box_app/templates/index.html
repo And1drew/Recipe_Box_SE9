@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Box</title>
+</head>
+<body>
+    <h1>Index View</h1>
+    <ul>
+        {% for item in recipe_data %}
+        <li style="padding:20px">
+            <span><a href="/recipe/{{item.id}}/">{{ item.title }}</a></span>
+            <br>
+            <span>created by: 
+                <a href="/author/{{item.author.id}}/">{{ item.author }}</a>
+            </span>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
