@@ -13,7 +13,7 @@ def index(request):
 def author_view(request, author_id):
     author_info = Author.objects.filter(id=author_id)
     author_info = author_info.first()
-    recipe_info = Recipe.objects.filter(id=author_id)
+    recipe_info = Recipe.objects.filter(author=author_id)
     return render(request, "author_view.html", 
     {'author': author_info, 'recipes': recipe_info})
 
