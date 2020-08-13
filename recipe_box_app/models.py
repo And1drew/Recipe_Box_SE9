@@ -4,7 +4,8 @@ from django.db import models
 class Author(models.Model):
     name = models.CharField(max_length=60)
     bio = models.TextField()
-    
+    username = models.CharField(max_length=120, default='')
+    password = models.CharField(max_length=120, default='')
     def __str__(self):
         return self.name
 

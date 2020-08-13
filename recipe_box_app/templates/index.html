@@ -9,6 +9,13 @@
     <h1>Index View</h1>
     <span>New Recipe<a href="/add_recipe/">here</a></span>
     <span>New Author<a href="/add_author/">here</a></span>
+    <br>
+    {% if request.user.is_authenticated %}
+        <span>you are currently logged in. Logout <a href="/logout/">here</a></span>
+    {% else %}
+        <span>you are not currently logged in. Login <a href="/login/">here</a></span>
+    {% endif %}
+
     <ul>
         {% for item in recipe_data %}
         <li style="padding:20px">
