@@ -6,7 +6,7 @@
     <title>Recipe Box | Add Author</title>
 </head>
 <body>
-    <form action="/add_author/" method="post">
+    <form action="/addauthor/" method="post">
         {% csrf_token %}
         {{ form.as_p}}
         <input type="submit" value="Submit">
