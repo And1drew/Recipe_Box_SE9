@@ -11,11 +11,21 @@
     <br>
     {{ recipe.description }}
     <br>
-    {{ recipe.instructions}}
+    {{ recipe.instructions }}
     <br>
     {{ recipe.time_required }}
     <br>
+    <a href="/edit/{{recipe.id}}">Edit Recipe</a>
+    <br>
     <a href="/author/{{recipe.author.id}}">{{ recipe.author }}</a>
+    <br>
+    {% if request.user.is_authenticated %}
+        {% if recipes in request.user.author.favorites.all %}
+            <a href="/remove_favorite/{{recipe.id}}">Remove From Favorites</a>
+        {% else %}
+            <a href="/add_favorite/{{recipe.id}}">Add to Favorites</a>
+        {% endif %}
+    {% endif %}
     <br>
     <span>go <a href="/">home</a></span>
 </body>

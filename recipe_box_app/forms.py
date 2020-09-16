@@ -1,4 +1,4 @@
-
+from django import forms
 from recipe_box_app.models import Recipe, Author
 
 class add_recipe_form(forms.Form):
