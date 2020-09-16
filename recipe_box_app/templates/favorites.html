@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Box | {{ author.title }}'s Favorites</title>
+</head>
+<body>
+    <!-- Got help from Andrew Belanger (Jack Detke's comment)-->
+    <h1>Favorites View</h1>
+    <ul>
+        {% for item in favorites %}
+        <li>
+            {{ item }}
+            <a href="/recipe/{{ item.id }}/">{{ recipe.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

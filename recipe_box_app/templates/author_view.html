@@ -12,6 +12,10 @@
     <br>
     {{ author.bio }}
     <br>
+
+{% if request.user.author == authors %}
+    <p>Favorites Count:  {{ request.user.author.favorites.count }} <a href="/my_favorites/">Favorites</a></p>
+{% endif %}    
     <ul>
         {% for item in recipes %}
         <li>
